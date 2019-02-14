@@ -1,2 +1,2 @@
 # Opencv-4
-Install OpenCV 4.0 
+Install OpenCV 4.0
