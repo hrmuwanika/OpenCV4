@@ -2,20 +2,29 @@
 # INSTALL OPENCV ON UBUNTU OR DEBIAN #
 ######################################
 
-# |         THIS SCRIPT IS TESTED CORRECTLY ON         |
-# |----------------------------------------------------|
-# | OS             | OpenCV       | Test | Last test   |
-# |----------------|--------------|------|-------------|
-# | Ubuntu 16.04.2 | OpenCV 3.2.0 | OK   | 20 May 2017 |
-# | Debian 8.8     | OpenCV 3.2.0 | OK   | 20 May 2017 |
-# | Debian 9.0     | OpenCV 4.0.0 | OK   | 17 sept 2018 |
+# |          THIS SCRIPT IS TESTED CORRECTLY ON          |
+# |------------------------------------------------------|
+# | OS               | OpenCV       | Test | Last test   |
+# |------------------|--------------|------|-------------|
+# | Ubuntu 18.04 LTS | OpenCV 3.4.2 | OK   | 18 Jul 2018 |
+# | Debian 9.5       | OpenCV 3.4.2 | OK   | 18 Jul 2018 |
+# |----------------------------------------------------- |
+# | Debian 9.0       | OpenCV 3.2.0 | OK   | 25 Jun 2017 |
+# | Debian 8.8       | OpenCV 3.2.0 | OK   | 20 May 2017 |
+# | Ubuntu 16.04 LTS | OpenCV 3.2.0 | OK   | 20 May 2017 |
+
+
+# VERSION TO BE INSTALLED
+
+OPENCV_VERSION='3.4.2'
+
 
 # 1. KEEP UBUNTU OR DEBIAN UP TO DATE
 
 sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get -y autoremove
+# sudo apt-get -y upgrade       # Uncomment this line to install the newest versions of all packages currently installed
+# sudo apt-get -y dist-upgrade  # Uncomment this line to, in addition to 'upgrade', handles changing dependencies with new versions of packages
+# sudo apt-get -y autoremove    # Uncomment this line to remove packages that are now no longer needed
 
 
 # 2. INSTALL THE DEPENDENCIES
@@ -45,14 +54,13 @@ sudo apt-get install -y ant default-jdk
 sudo apt-get install -y doxygen
 
 
-# 3. INSTALL THE LIBRARY (YOU CAN CHANGE '4.0.0' FOR THE LAST STABLE VERSION)
+# 3. INSTALL THE LIBRARY
 
 sudo apt-get install -y unzip wget
-##wget https://github.com/opencv/opencv/archive/3.2.0.zip
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.0.zip
-unzip 4.0.0.zip
-rm 4.0.0.zip
-mv opencv-4.0.0 OpenCV
+wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
+unzip ${OPENCV_VERSION}.zip
+rm ${OPENCV_VERSION}.zip
+mv opencv-${OPENCV_VERSION} OpenCV
 cd OpenCV
 mkdir build
 cd build
