@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ######################################
 # INSTALL OPENCV ON UBUNTU OR DEBIAN #
 ######################################
@@ -10,19 +12,15 @@
 # | Debian 9.7       | OpenCV 4.0.1 | OK   | 16 Feb 2019 |
 # |----------------------------------------------------- |
 
-#!/bin/bash
-
 # VERSION TO BE INSTALLED
 OPENCV_VERSION='4.0.1'
-
 
 # 1. KEEP UBUNTU OR DEBIAN UP TO DATE
 
 sudo apt-get -y update
-sudo apt-get -y upgrade       # 
+sudo apt-get -y upgrade       
 # sudo apt-get -y dist-upgrade  # Uncomment this line to, in addition to 'upgrade', handles changing dependencies with new versions of packages
 # sudo apt-get -y autoremove    # Uncomment this line to remove packages that are now no longer needed
-
 
 # 2. INSTALL THE DEPENDENCIES
 
@@ -50,7 +48,6 @@ sudo apt-get install -y ant default-jdk
 # Documentation:
 sudo apt-get install -y doxygen
 
-
 # 3. INSTALL THE LIBRARY
 sudo apt-get install -y unzip wget
 wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
@@ -65,7 +62,5 @@ make -j4
 sudo make install
 sudo ldconfig
 
-
 # 4. EXECUTE SOME OPENCV EXAMPLES AND COMPILE A DEMONSTRATION
-
 # To complete this step, please visit 'http://milq.github.io/install-opencv-ubuntu-debian'.
