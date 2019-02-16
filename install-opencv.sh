@@ -6,23 +6,20 @@
 # |------------------------------------------------------|
 # | OS               | OpenCV       | Test | Last test   |
 # |------------------|--------------|------|-------------|
-# | Ubuntu 18.04 LTS | OpenCV 3.4.2 | OK   | 18 Jul 2018 |
-# | Debian 9.5       | OpenCV 3.4.2 | OK   | 18 Jul 2018 |
+# | Ubuntu 18.04 LTS | OpenCV 4.0.1 | OK   | 16 Feb 2019 |
+# | Debian 9.7       | OpenCV 4.0.1 | OK   | 16 Feb 2019 |
 # |----------------------------------------------------- |
-# | Debian 9.0       | OpenCV 3.2.0 | OK   | 25 Jun 2017 |
-# | Debian 8.8       | OpenCV 3.2.0 | OK   | 20 May 2017 |
-# | Ubuntu 16.04 LTS | OpenCV 3.2.0 | OK   | 20 May 2017 |
 
+#!/bin/bash
 
 # VERSION TO BE INSTALLED
-
-OPENCV_VERSION='3.4.2'
+OPENCV_VERSION='4.0.1'
 
 
 # 1. KEEP UBUNTU OR DEBIAN UP TO DATE
 
 sudo apt-get -y update
-# sudo apt-get -y upgrade       # Uncomment this line to install the newest versions of all packages currently installed
+sudo apt-get -y upgrade       # 
 # sudo apt-get -y dist-upgrade  # Uncomment this line to, in addition to 'upgrade', handles changing dependencies with new versions of packages
 # sudo apt-get -y autoremove    # Uncomment this line to remove packages that are now no longer needed
 
@@ -55,7 +52,6 @@ sudo apt-get install -y doxygen
 
 
 # 3. INSTALL THE LIBRARY
-
 sudo apt-get install -y unzip wget
 wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
 unzip ${OPENCV_VERSION}.zip
